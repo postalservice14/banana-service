@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: jkelly
+      changes:
+        - createTable:
+            tableName: banana
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: picked_at
+                  type: datetime
+                  constraints:
+                    nullable: true
+              - column:
+                  name: peeled
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: true
+  - changeSet:
+      id: 2
+      author: jkelly
+      changes:
+        - insert:
+            tableName: banana
+            columns:
+              - column:
+                  name: picked_at
+                  value: now()
