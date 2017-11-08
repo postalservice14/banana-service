@@ -1,5 +1,6 @@
 namespace: mu
 environments:
+  - name: acceptance
   - name: dev
   - name: production
 service:
